@@ -5,13 +5,23 @@ import Add from '../components/Add';
 import '../styles/education.css';
 
 class Education extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.editEducation = this.editEducation.bind(this);
+    }
+
+    editEducation() {
+        this.props.startEditingEducation();
+    }
+    
     render() {
         const { educationInfo } = this.props;
         return (
             <div className='education-section'>
                 <div className='education-section-title'>
                     <span className='education-title-border'>Education</span>
-                    <div className='edit-button edit-education no-print'>Edit</div>
+                    <div className='edit-button edit-education no-print' onClick={this.editEducation}>Edit</div>
                 </div>
                 {educationInfo.map((entry) => {
                     if (entry.subject) {

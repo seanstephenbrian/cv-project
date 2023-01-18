@@ -5,13 +5,23 @@ import Add from './Add';
 import '../styles/work.css';
 
 class Work extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.editWork = this.editWork.bind(this);
+    }
+
+    editWork() {
+        this.props.startEditingWork();
+    }
+
     render() {
         const { workInfo } = this.props;
         return (
             <div className='work-section'>
                 <div className='work-section-title'>
                     <span className='work-title-border'>Work</span>
-                    <div className='edit-button edit-work no-print'>Edit</div>
+                    <div className='edit-button edit-work no-print' onClick={this.editWork} >Edit</div>
                 </div>
                 {workInfo.map((entry) => {
                     return (

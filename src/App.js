@@ -20,6 +20,7 @@ class App extends React.Component {
     super();
 
     this.state = {
+      editing: '',
       general: {
         name: 'John Smith',
         email: 'johnsmith@gmail.com',
@@ -66,15 +67,36 @@ class App extends React.Component {
     }
   }
 
+  openEditWindow(section) {
+    this.setState({editing: section});
+  }
+
   render() {
+
+    if (this.state.editing) {
+      return (
+        <div>{this.state.editing}</div>
+      )
+    } else {
       return (
         <div className="wrapper">
           <General generalInfo={this.state.general} />
-          <Education educationInfo={this.state.education} />
-          <Work workInfo={this.state.work} />
+          <Education 
+            educationInfo={this.state.education} 
+            startEditingEducation={() => {
+              this.openEditWindow('education');
+            }}
+          />
+          <Work 
+            workInfo={this.state.work}
+            startEditingWork={() => {
+              this.openEditWindow('work');
+            }}
+          />
           <Footer />
         </div>   
       )
+    }
   }
 }
 
