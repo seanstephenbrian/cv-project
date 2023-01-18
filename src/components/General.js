@@ -8,7 +8,7 @@ class General extends React.Component {
         const { name, email, phone, location, headshot } = this.props.generalInfo;
         return (
             <div className='general-info'>
-                <div className='name'>{name}</div>
+                <div className='name'><span className='name-border'>{name}</span></div>
                 <div className='email'>{email}</div>
                 <div className='phone'>{phone}</div>
                 <div className='location'>{location}</div>

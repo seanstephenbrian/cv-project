@@ -19,16 +19,20 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+@font-face {
+    font-family: 'Unbounded';
+    src: url('../fonts/unbounded.ttf') format("truetype supports variations"),
+		 url('../fonts/unbounded.ttf') format("truetype-variations");
+    font-weight: 100 1000;
+}
+
 html,
 body,
 #root {
     box-sizing: border-box;
 	min-width: 816px;
 	min-height: 1056px;
-}
-
-body * {
-    border: 1px solid red;
+	font-family: 'Unbounded';
 }
 
 #root {
@@ -41,5 +45,6 @@ body * {
 	min-width: 816px;
 	max-width: 816px;
 	min-height: 1056px;
+	padding: 20px;
 }
 

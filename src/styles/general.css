@@ -1,7 +1,3 @@
-.general-info * {
-    border: 0.5px solid blue;
-}
-
 .general-info {
     min-height: 150px;
     height: 15vh;
@@ -13,22 +9,38 @@
         "location headshot"
         "email headshot"
         "phone headshot";
+    border-bottom: 0.5px solid black;
 }
 
 .name {
     grid-area: name;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.name-border {
+    border: 0.5px solid black;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .location {
     grid-area: location;
+    font-weight: 200;
 }
 
 .email {
     grid-area: email;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 300;
 }
 
 .phone {
     grid-area: phone;
+    font-weight: 300;
 }
 
 .headshot-container {
@@ -41,4 +53,6 @@
 .headshot-img {
     max-height: 70%;
     width: auto;
+    border: 0.5px solid black;
+    border-radius: 50%;
 }
