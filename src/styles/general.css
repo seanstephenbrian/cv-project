@@ -2,7 +2,7 @@
     min-height: 150px;
     height: 15vh;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 2fr 1fr 1fr 1fr;
     grid-template-areas: 
         "name headshot"
@@ -46,7 +46,7 @@
 .headshot-container {
     grid-area: headshot;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 

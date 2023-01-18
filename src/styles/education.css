@@ -1,0 +1,65 @@
+.education-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.education-section-title {
+    margin: 30px 0 10px;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.education-title-border {
+    border: 0.5px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.education-entry {
+    --line-padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "info description";
+    margin: 20px 0;
+}
+
+.education-info {
+    grid-area: info;
+    border-right: 0.5px solid black;
+    padding-right: var(--line-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.school-name {
+    font-size: 1.2rem;
+}
+
+.school-dates,
+.description-label {
+    font-size: 0.9rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.school-degree {
+    font-weight: 350;
+}
+
+.education-description {
+    text-align: left;
+    padding-left: var(--line-padding);
+    grid-area: description;
+}
+
+.description-label {
+    font-style: italic;
+}
+
+.description-text {
+    line-height: 1.2;
+    font-weight: 350;
+}

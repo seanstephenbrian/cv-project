@@ -13,7 +13,7 @@ class General extends React.Component {
                 <div className='phone'>{phone}</div>
                 <div className='location'>{location}</div>
                 <div className='headshot-container'>
-                <img className="headshot-img" src={headshot} alt={name}></img>
+                    <img className="headshot-img" src={headshot} alt={name}></img>
                 </div>
             </div>
         )
