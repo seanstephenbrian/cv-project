@@ -6,6 +6,7 @@ import uniqid from 'uniqid';
 import General from './components/General';
 import Education from './components/Education';
 import Work from './components/Work';
+import Footer from './components/Footer';
 
 // assets:
 import Headshot from './img/headshot.jpg';
@@ -71,7 +72,8 @@ class App extends React.Component {
           <General generalInfo={this.state.general} />
           <Education educationInfo={this.state.education} />
           <Work workInfo={this.state.work} />
-        </div>    
+          <Footer />
+        </div>   
       )
   }
 }

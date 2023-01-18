@@ -48,3 +48,8 @@ body,
 	padding: 20px;
 }
 
+@media print {
+	.no-print {
+		visibility: hidden;
+	}
+}
