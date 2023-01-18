@@ -1,10 +1,11 @@
+// dependencies:
 import React from 'react';
+import uniqid from 'uniqid';
 
 // components:
 import General from './components/General';
 import Education from './components/Education';
 import Work from './components/Work';
-import Add from './components/Add';
 
 // assets:
 import Headshot from './img/headshot.jpg';
@@ -31,7 +32,16 @@ class App extends React.Component {
           dates: '2012-2016',
           degree: 'BA',
           subject: 'English',
-          additional: `Phi Beta Kappa; Dean's List, 2014-2016`
+          additional: `Phi Beta Kappa; Dean's List, 2014-2016`,
+          id: uniqid()
+        },
+        {
+          school: 'Normal High School',
+          dates: '2008-2012',
+          degree: 'High school diploma',
+          subject: '',
+          additional: `National Merit Scholar`,
+          id: uniqid()
         }
       ],
       work: [
@@ -40,7 +50,8 @@ class App extends React.Component {
           location: 'Chicago, IL',
           title: 'Junior Copywriter',
           years: '2016-2018',
-          description: 'Produced copy for national and international advertising campaigns'
+          description: 'Produced copy for national and international advertising campaigns',
+          id: uniqid()
         }
       ]
     }
@@ -51,9 +62,7 @@ class App extends React.Component {
         <div className="wrapper">
           <General generalInfo={this.state.general} />
           <Education educationInfo={this.state.education} />
-          <Add />
           <Work workInfo={this.state.work} />
-          <Add />
         </div>    
       )
   }

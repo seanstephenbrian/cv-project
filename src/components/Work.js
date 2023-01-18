@@ -1,9 +1,14 @@
 import React from 'react';
 
+import Add from './Add';
+
 class Work extends React.Component {
     render() {
         return (
-            <div>work</div>
+            <div>
+                work
+                <Add section="work" />
+            </div>
         )
     }
 }
