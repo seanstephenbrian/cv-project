@@ -67,3 +67,35 @@
     line-height: 1.2;
     font-weight: 350;
 }
+
+/* editing view: */
+
+.editing-education-entry {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+.editing-education-entry-title {
+    font-size: 1.15rem;
+    font-weight: 200;
+    text-decoration: underline;
+}
+
+.item-edits {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "edits-label edits-input";
+    column-gap: 10px;
+    margin: 10px 0;
+}
+
+.edits-label {
+    grid-area: edits-label;
+    text-align: right;
+}
+
+.edits-input {
+    grid-area: edits-input;
+}

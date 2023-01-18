@@ -61,6 +61,18 @@ body,
 	transform: scale(1.1);
 }
 
+input,
+textarea {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+input:focus,
+textarea:focus {
+	border: 2px solid rgb(255, 166, 0);
+	outline: none;
+	background-color: rgba(249, 179, 49, 0.391);
+}
+
 @media print {
 	.no-print,
 	.no-print.copyright {

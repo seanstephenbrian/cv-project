@@ -17,7 +17,7 @@ class Education extends React.Component {
     }
 
     saveEdits() {
-        alert('this will submit edits');
+        this.props.saveEducationEdits();
     }
 
     render() {
@@ -29,32 +29,35 @@ class Education extends React.Component {
                 <div className='education-section'>
                     <div className='education-section-title'>
                         <span className='education-title-border'>Education</span>
-                        <div className='edit-button edit-education no-print' onClick={this.submitEdits}>Save Edits</div>
+                        <div className='edit-button edit-education no-print' onClick={this.saveEdits}>Save Edits</div>
                     </div>
 
                     {/* editable education entries: */}
                     {educationInfo.map((entry) => {
                         return (
                             <div key={entry.id} className='editing-education-entry'>
-                                <div className='school-edits'>
-                                    <label htmlFor='school'>School:</label>
-                                    <input data-id={entry.id} type="text" name="school" value={entry.school} />
+                                <div className='editing-education-entry-title'>
+                                    Edit item:
                                 </div>
-                                <div className='dates-edits'>
-                                    <label htmlFor='dates'>Years of attendance:</label>
-                                    <input data-id={entry.id} type='text' name='dates' value={entry.dates}></input>
+                                <div className='item-edits school-edits'>
+                                    <label className='edits-label' htmlFor='school'>School:</label>
+                                    <input className='edits-input' data-id={entry.id} type="text" name="school" value={entry.school} />
                                 </div>
-                                <div className='degree-edits'>
-                                    <label htmlFor='degree'>Degree/certification:</label>
-                                    <input data-id={entry.id} type='text' name='degree' value={entry.degree}></input>
+                                <div className='item-edits dates-edits'>
+                                    <label className='edits-label' htmlFor='dates'>Years of attendance:</label>
+                                    <input className='edits-input' data-id={entry.id} type='text' name='dates' value={entry.dates}></input>
                                 </div>
-                                <div className='subject-edits'>
-                                    <label htmlFor='subject'>Major/subject area:</label>
-                                    <input data-id={entry.id} type='text' name='subject' value={entry.subject}></input>
+                                <div className='item-edits degree-edits'>
+                                    <label className='edits-label' htmlFor='degree'>Degree/certification:</label>
+                                    <input className='edits-input' data-id={entry.id} type='text' name='degree' value={entry.degree}></input>
                                 </div>
-                                <div className='additional-edits'>
-                                    <label htmlFor='additional'>Additional information:</label>
-                                    <textarea data-id={entry.id} name='additional' value={entry.additional}></textarea>
+                                <div className='item-edits subject-edits'>
+                                    <label className='edits-label' htmlFor='subject'>Major/subject area:</label>
+                                    <input className='edits-input' data-id={entry.id} type='text' name='subject' value={entry.subject}></input>
+                                </div>
+                                <div className='item-edits additional-edits'>
+                                    <label className='edits-label' htmlFor='additional'>Additional information:</label>
+                                    <textarea className='edits-input' data-id={entry.id} name='additional' value={entry.additional}></textarea>
                                 </div>
                                 
                             </div>

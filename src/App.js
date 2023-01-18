@@ -71,6 +71,10 @@ class App extends React.Component {
     this.setState({editing: section});
   }
 
+  confirmEdits() {
+    alert('THIS NEEDS TO CONFIRM EDITS');
+  }
+
   render() {
 
     if (this.state.editing === 'education') {
@@ -82,6 +86,9 @@ class App extends React.Component {
             educationInfo={this.state.education} 
             startEditingEducation={() => {
               this.openEditWindow('education');
+            }}
+            saveEducationEdits={() => {
+              this.confirmEdits();
             }}
           />
           <Work 
