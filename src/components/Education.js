@@ -22,7 +22,7 @@ class Education extends React.Component {
                                     <h2 className='school-degree'>{entry.degree}, {entry.subject}</h2>
                                 </div>
                                 <div className='education-description'>
-                                    <h3 className='description-label'>Additional info:</h3>
+                                    <h3 className='description-label'>Additional details:</h3>
                                     <p className='description-text'>{entry.additional}</p>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@ class Education extends React.Component {
                                     <h2 className='school-degree'>{entry.degree}</h2>
                             </div>
                             <div className='education-description'>
-                                <h3 className='description-label'>Additional info:</h3>
+                                <h3 className='description-label'>Additional details:</h3>
                                 <p className='description-text'>{entry.additional}</p>
                             </div>
                         </div>
