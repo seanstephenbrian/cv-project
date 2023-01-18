@@ -16,7 +16,14 @@ class Work extends React.Component {
     }
 
     render() {
-        const { workInfo } = this.props;
+        const { workInfo, editing } = this.props;
+
+        // editing view:
+        if (editing) {
+            return 'editing work';
+        }
+
+        // normal view:
         return (
             <div className='work-section'>
                 <div className='work-section-title'>

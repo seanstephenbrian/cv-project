@@ -73,9 +73,45 @@ class App extends React.Component {
 
   render() {
 
-    if (this.state.editing) {
+    if (this.state.editing === 'education') {
       return (
-        <div>{this.state.editing}</div>
+        <div className="wrapper">
+          <General generalInfo={this.state.general} />
+          <Education
+            editing='true' 
+            educationInfo={this.state.education} 
+            startEditingEducation={() => {
+              this.openEditWindow('education');
+            }}
+          />
+          <Work 
+            workInfo={this.state.work}
+            startEditingWork={() => {
+              this.openEditWindow('work');
+            }}
+          />
+          <Footer />
+        </div>
+      )
+    } else if (this.state.editing === 'work') {
+      return (
+        <div className="wrapper">
+          <General generalInfo={this.state.general} />
+          <Education 
+            educationInfo={this.state.education} 
+            startEditingEducation={() => {
+              this.openEditWindow('education');
+            }}
+          />
+          <Work
+            editing='true'
+            workInfo={this.state.work}
+            startEditingWork={() => {
+              this.openEditWindow('work');
+            }}
+          />
+          <Footer />
+        </div>   
       )
     } else {
       return (
