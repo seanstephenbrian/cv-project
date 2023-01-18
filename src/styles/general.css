@@ -10,6 +10,7 @@
         "email headshot"
         "phone headshot";
     border-bottom: 0.5px solid black;
+    padding-bottom: 10px;
 }
 
 .name {

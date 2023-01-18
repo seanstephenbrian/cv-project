@@ -11,6 +11,7 @@ class Work extends React.Component {
             <div className='work-section'>
                 <div className='work-section-title'>
                     <span className='work-title-border'>Work</span>
+                    <div className='edit-button edit-work no-print'>Edit</div>
                 </div>
                 {workInfo.map((entry) => {
                     return (

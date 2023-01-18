@@ -11,6 +11,7 @@ class Education extends React.Component {
             <div className='education-section'>
                 <div className='education-section-title'>
                     <span className='education-title-border'>Education</span>
+                    <div className='edit-button edit-education no-print'>Edit</div>
                 </div>
                 {educationInfo.map((entry) => {
                     if (entry.subject) {

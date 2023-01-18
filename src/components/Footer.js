@@ -6,7 +6,7 @@ class Footer extends React.Component {
     render() {
         const year = new Date().getFullYear();
         return (
-            <footer className='no-print'>
+            <footer className='copyright no-print'>
                 <p>cv generator</p>
                 <p>copyright © {year}</p>
                 <p>ssbbd</p>
