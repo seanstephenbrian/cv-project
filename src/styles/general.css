@@ -1,4 +1,44 @@
-.headshot {
-    width: 100px;
-    height: auto;
+.general-info * {
+    border: 0.5px solid blue;
+}
+
+.general-info {
+    min-height: 150px;
+    height: 15vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "name headshot"
+        "location headshot"
+        "email headshot"
+        "phone headshot";
+}
+
+.name {
+    grid-area: name;
+}
+
+.location {
+    grid-area: location;
+}
+
+.email {
+    grid-area: email;
+}
+
+.phone {
+    grid-area: phone;
+}
+
+.headshot-container {
+    grid-area: headshot;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headshot-img {
+    max-height: 70%;
+    width: auto;
 }

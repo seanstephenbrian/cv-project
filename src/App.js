@@ -1,11 +1,16 @@
 import React from 'react';
 
+// components:
 import General from './components/General';
 import Education from './components/Education';
 import Work from './components/Work';
 import Add from './components/Add';
 
+// assets:
 import Headshot from './img/headshot.jpg';
+
+// styles:
+import './styles/app.css';
 
 class App extends React.Component {
 
