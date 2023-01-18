@@ -6,7 +6,7 @@ class Education extends React.Component {
     render() {
         const { educationInfo } = this.props;
         return (
-            <div>
+            <div className='education-section'>
                 {educationInfo.map((entry) => {
                     if (entry.subject) {
                         return (

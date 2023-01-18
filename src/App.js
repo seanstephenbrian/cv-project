@@ -46,6 +46,14 @@ class App extends React.Component {
       ],
       work: [
         {
+          company: `Another Company`,
+          location: 'Milwaukee, WI',
+          title: 'Senior Copywriter',
+          years: '2019-present',
+          description: 'Oversaw major advertising campaigns',
+          id: uniqid()
+        },
+        {
           company: `McDonald's (Corporate)`,
           location: 'Chicago, IL',
           title: 'Junior Copywriter',
