@@ -73,8 +73,8 @@ class App extends React.Component {
     this.setState({editing: section});
   }
 
-  confirmEdits() {
-    alert('THIS NEEDS TO CONFIRM EDITS');
+  saveEdits() {
+    this.setState({ editing: '' });
   }
 
   updateInformation(section, entryId, propertyToUpdate, value) {
@@ -104,8 +104,8 @@ class App extends React.Component {
             onEditEducationClick={() => {
               this.openEditWindow('education');
             }}
-            saveEducationEdits={() => {
-              this.confirmEdits();
+            onSaveEditsClick={() => {
+              this.saveEdits();
             }}
             onTextChange={this.updateInformation}
           />
@@ -134,6 +134,7 @@ class App extends React.Component {
             startEditingWork={() => {
               this.openEditWindow('work');
             }}
+            onTextChange={this.updateInformation}
           />
           <Footer />
         </div>   

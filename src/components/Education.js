@@ -9,7 +9,7 @@ class Education extends React.Component {
     constructor(props) {
         super(props);
         this.handleEditClick = this.handleEditClick.bind(this);
-        this.saveEdits = this.saveEdits.bind(this);
+        this.handleSaveEditsClick = this.handleSaveEditsClick.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
     }
 
@@ -21,8 +21,8 @@ class Education extends React.Component {
         this.props.onTextChange(section, e.target.dataset.id, e.target.name, e.target.value);
     }
 
-    saveEdits() {
-        this.props.saveEducationEdits();
+    handleSaveEditsClick() {
+        this.props.onSaveEditsClick();
     }
 
     render() {
@@ -34,14 +34,14 @@ class Education extends React.Component {
                 <div className='education-section'>
                     <div className='education-section-title'>
                         <span className='education-title-border'>Education</span>
-                        <div className='edit-button edit-education no-print' onClick={this.saveEdits}>Save Edits</div>
+                        <div className='edit-button edit-education no-print' onClick={this.handleSaveEditsClick}>Save Edits</div>
                     </div>
 
                     {/* editable education entries: */}
                     {educationInfo.map((entry) => {
                         return (
                             <div key={entry.id} className='editing-education-entry'>
-                                <div className='editing-education-entry-title'>
+                                <div className='editing-entry-title'>
                                     Edit item:
                                 </div>
                                 <div className='item-edits school-edits'>

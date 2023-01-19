@@ -61,6 +61,12 @@ body,
 	transform: scale(1.1);
 }
 
+.editing-entry-title {
+	font-size: 1.15rem;
+    font-weight: 200;
+    text-decoration: underline;
+}
+
 input,
 textarea {
 	font-family: 'Courier New', Courier, monospace;
