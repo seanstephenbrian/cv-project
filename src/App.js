@@ -7,7 +7,7 @@ import AppTitle from './components/AppTitle';
 import Education from './components/Education';
 import Footer from './components/Footer';
 import General from './components/General';
-import Print from './components/Print';
+import PrintOptions from './components/Print';
 import Work from './components/Work';
 
 // assets:
@@ -22,6 +22,7 @@ class App extends React.Component {
         super();
 
         this.allowEdits = this.allowEdits.bind(this);
+        this.changeFont = this.changeFont.bind(this);
         this.createEntry = this.createEntry.bind(this);
         this.removeItem = this.removeItem.bind(this);
         this.saveEdits = this.saveEdits.bind(this);
@@ -73,7 +74,9 @@ class App extends React.Component {
                     description: 'Produced copy for national and international advertising campaigns',
                     id: uniqid()
                 }
-            ]
+            ],
+            accent: '#e66465',
+            font: 'Unbounded'
         }
     }
 
@@ -84,6 +87,10 @@ class App extends React.Component {
             return;
         }
         this.setState({editing: section});
+    }
+
+    changeFont(fontChoice) {
+        this.setState({font: fontChoice});
     }
 
     createEntry(section) {
@@ -162,7 +169,7 @@ class App extends React.Component {
         // editing general info:
         if (this.state.editing === 'general') {
             return (
-                <div className="wrapper">
+                <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
                     <General 
                         editing={this.state.editing}
@@ -180,13 +187,14 @@ class App extends React.Component {
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
+                    <PrintOptions onFontClick={this.changeFont} />
                     <Footer />
                 </div>   
             )
         // editing education:
         } else if (this.state.editing === 'education') {
             return (
-                <div className="wrapper">
+                <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
                     <General 
                         editing={this.state.editing}
@@ -206,13 +214,14 @@ class App extends React.Component {
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
+                    <PrintOptions onFontClick={this.changeFont} />
                     <Footer />
                 </div>
             )
         // editing work:
         } else if (this.state.editing === 'work') {
             return (
-                <div className="wrapper">
+                <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
                     <General 
                         editing={this.state.editing}
@@ -232,13 +241,14 @@ class App extends React.Component {
                         onTextChange={this.updateInformation}
                         workInfo={this.state.work}
                     />
+                    <PrintOptions onFontClick={this.changeFont} />
                     <Footer />
                 </div>   
             )
         // not editing:
         } else {
             return (
-                <div className="wrapper">
+                <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
                     <General 
                         editing={this.state.editing}
@@ -255,7 +265,7 @@ class App extends React.Component {
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
-                    <Print />
+                    <PrintOptions onFontClick={this.changeFont} />
                     <Footer />
                 </div>   
             )

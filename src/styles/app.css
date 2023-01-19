@@ -20,6 +20,37 @@ time, mark, audio, video {
 }
 
 @font-face {
+    font-family: 'Courier Prime';
+    src: url('../fonts/courier-prime.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/eb-garamond.ttf') format("truetype supports variations"),
+		 url('../fonts/eb-garamond.ttf') format("truetype-variations");
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../fonts/josefin-sans.ttf') format("truetype supports variations"),
+		 url('../fonts/josefin-sans.ttf') format("truetype-variations");
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/open-sans.ttf') format("truetype supports variations"),
+		 url('../fonts/open-sans.ttf') format("truetype-variations");
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: 'Torre Farfan';
+    src: url('../fonts/torre-farfan.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Unbounded';
     src: url('../fonts/unbounded.ttf') format("truetype supports variations"),
 		 url('../fonts/unbounded.ttf') format("truetype-variations");
@@ -32,7 +63,6 @@ body,
     box-sizing: border-box;
 	min-width: 816px;
 	min-height: 1056px;
-	font-family: 'Unbounded';
 }
 
 #root {
