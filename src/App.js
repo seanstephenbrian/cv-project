@@ -3,10 +3,12 @@ import React from 'react';
 import uniqid from 'uniqid';
 
 // components:
-import General from './components/General';
+import AppTitle from './components/AppTitle';
 import Education from './components/Education';
-import Work from './components/Work';
 import Footer from './components/Footer';
+import General from './components/General';
+import Print from './components/Print';
+import Work from './components/Work';
 
 // assets:
 import Headshot from './img/headshot.jpg';
@@ -163,6 +165,7 @@ class App extends React.Component {
     if (this.state.editing === 'general') {
       return (
         <div className="wrapper">
+            <AppTitle />
           <General 
             editing={this.state.editing}
             generalInfo={this.state.general}
@@ -186,6 +189,7 @@ class App extends React.Component {
     } else if (this.state.editing === 'education') {
       return (
         <div className="wrapper">
+            <AppTitle />
           <General 
             editing={this.state.editing}
             generalInfo={this.state.general}
@@ -211,6 +215,7 @@ class App extends React.Component {
     } else if (this.state.editing === 'work') {
       return (
         <div className="wrapper">
+            <AppTitle />
           <General 
             editing={this.state.editing}
             generalInfo={this.state.general} 
@@ -236,6 +241,7 @@ class App extends React.Component {
     } else {
       return (
         <div className="wrapper">
+            <AppTitle />
           <General 
             editing={this.state.editing}
             generalInfo={this.state.general}
@@ -251,6 +257,7 @@ class App extends React.Component {
             onEditWorkClick={() => {this.allowEdits('work')}}
             workInfo={this.state.work}
           />
+          <Print />
           <Footer />
         </div>   
       )

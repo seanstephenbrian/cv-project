@@ -1,9 +1,8 @@
 .general-info {
     min-height: 150px;
-    height: 15vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 1fr repeat(3, 0.5fr);
+    grid-template-rows: 1.5fr 1fr repeat(3, 0.5fr);
     grid-template-areas: 
         "name edit"
         "one-liner one-liner"
@@ -41,6 +40,8 @@
 }
 
 .one-liner {
+    max-width: 70%;
+    padding: 5px 0 10px;
     grid-area: one-liner;
     display: flex;
     align-items: center;

@@ -1,0 +1,17 @@
+.print-section {
+    cursor: pointer;
+    background-color: #97d573c3;
+    margin: 0 auto 20px;
+    width: fit-content;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease-in-out;
+}
+
+.print-section:hover {
+    transform: scale(1.05);
+}

@@ -39,8 +39,8 @@ body,
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background: rgb(152,42,46);
-	background: linear-gradient(135deg, rgba(152,42,46,0.5830926120448179) 0%, rgba(252,144,136,0.5074623599439776) 100%);
+    background: rgb(72,41,173);
+    background: linear-gradient(77deg, rgba(72,41,173,0.29177608543417366) 0%, rgba(118,187,198,0.2945772058823529) 100%);
 }
 
 .wrapper {
@@ -48,7 +48,7 @@ body,
 	min-width: 816px;
 	max-width: 816px;
 	min-height: 100vh;
-	padding: 20px;
+	padding: 20px 30px;
 	border: 2px solid black;
 }
 
@@ -63,6 +63,10 @@ body,
 
 .edit-button:hover {
 	transform: scale(1.1);
+}
+
+.edit-button.save-general-edits:hover {
+    transform: scale(1.05);
 }
 
 .editing-entry-title {
