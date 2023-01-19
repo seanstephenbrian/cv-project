@@ -44,7 +44,7 @@ class Education extends React.Component {
             return (
                 <div className='education-section'>
                     <div className='education-section-title'>
-                        <span className='education-title-border'>Education</span>
+                        <span className='education-title-border' style={{backgroundColor: this.props.accentColor}}>Education</span>
                         <div className='edit-button edit-education no-print' onClick={this.handleSaveEditsClick}>Save All Edits</div>
                     </div>
 
@@ -91,7 +91,7 @@ class Education extends React.Component {
         return (
             <div className='education-section'>
                 <div className='education-section-title'>
-                    <span className='education-title-border'>Education</span>
+                    <span className='education-title-border' style={{backgroundColor: this.props.accentColor}}>Education</span>
                     <div className='edit-button edit-education no-print' onClick={this.handleEditClick}>Edit</div>
                 </div>
                 {educationInfo.map((entry) => {

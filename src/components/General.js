@@ -101,7 +101,7 @@ class General extends React.Component {
         } else {
             return (
                 <div className='general-info'>
-                    <div className='name'><span className='name-border'>{name}</span></div>
+                    <div className='name'><span className='name-border' style={{backgroundColor: this.props.accentColor}}>{name}</span></div>
                     {this.returnEditButton()}
                     <div className='email'>{email}</div>
                     <div className='phone'>{phone}</div>

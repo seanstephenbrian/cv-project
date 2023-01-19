@@ -18,10 +18,11 @@ import './styles/app.css';
 
 class App extends React.Component {
     
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.allowEdits = this.allowEdits.bind(this);
+        this.changeAccentColor = this.changeAccentColor.bind(this);
         this.changeFont = this.changeFont.bind(this);
         this.createEntry = this.createEntry.bind(this);
         this.removeItem = this.removeItem.bind(this);
@@ -75,7 +76,7 @@ class App extends React.Component {
                     id: uniqid()
                 }
             ],
-            accent: '#e66465',
+            accent: '#FFBEAD',
             font: 'Unbounded'
         }
     }
@@ -87,6 +88,10 @@ class App extends React.Component {
             return;
         }
         this.setState({editing: section});
+    }
+
+    changeAccentColor(newColor) {
+        this.setState({accent: newColor});
     }
 
     changeFont(fontChoice) {
@@ -171,23 +176,26 @@ class App extends React.Component {
             return (
                 <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
-                    <General 
+                    <General
+                        accentColor={this.state.accent} 
                         editing={this.state.editing}
                         generalInfo={this.state.general}
                         onGeneralInfoChange={(property, value) => {this.updateGeneralInfo(property, value)}}
                         onSaveEditsClick={this.saveEdits}
                     />
-                    <Education 
+                    <Education
+                        accentColor={this.state.accent} 
                         createEducationEntry={() => {this.createEntry('education')}}
                         educationInfo={this.state.education} 
                         onEditEducationClick={() => {this.allowEdits('education')}}
                     />
                     <Work
+                        accentColor={this.state.accent}
                         createWorkEntry={() => {this.createEntry('work')}}
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions onFontClick={this.changeFont} />
+                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
                     <Footer />
                 </div>   
             )
@@ -196,12 +204,14 @@ class App extends React.Component {
             return (
                 <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
-                    <General 
+                    <General
+                        accentColor={this.state.accent} 
                         editing={this.state.editing}
                         generalInfo={this.state.general}
                         onEditGeneralClick={() => {this.allowEdits('general')}}
                     />
                     <Education
+                        accentColor={this.state.accent}
                         createEducationEntry={() => {this.createEntry('education')}}
                         editing='true' 
                         educationInfo={this.state.education}
@@ -210,11 +220,12 @@ class App extends React.Component {
                         onTextChange={this.updateInformation}
                     />
                     <Work
+                        accentColor={this.state.accent}
                         createWorkEntry={() => {this.createEntry('work')}}
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions onFontClick={this.changeFont} />
+                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
                     <Footer />
                 </div>
             )
@@ -223,17 +234,20 @@ class App extends React.Component {
             return (
                 <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
-                    <General 
+                    <General
+                        accentColor={this.state.accent} 
                         editing={this.state.editing}
                         generalInfo={this.state.general} 
                         onEditGeneralClick={() => {this.allowEdits('general')}}
                     />
                     <Education
+                        accentColor={this.state.accent}
                         createEducationEntry={() => {this.createEntry('education')}} 
                         educationInfo={this.state.education} 
                         onEditEducationClick={() => { this.allowEdits('education')}}
                     />
                     <Work
+                        accentColor={this.state.accent}
                         createWorkEntry={() => {this.createEntry('work')}}
                         editing='true'
                         onDeleteClick={this.removeItem}
@@ -241,7 +255,7 @@ class App extends React.Component {
                         onTextChange={this.updateInformation}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions onFontClick={this.changeFont} />
+                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
                     <Footer />
                 </div>   
             )
@@ -250,22 +264,25 @@ class App extends React.Component {
             return (
                 <div className="wrapper" style={{fontFamily: this.state.font}}>
                     <AppTitle />
-                    <General 
+                    <General
+                        accentColor={this.state.accent} 
                         editing={this.state.editing}
                         generalInfo={this.state.general}
                         onEditGeneralClick={() => {this.allowEdits('general')}} 
                     />
                     <Education
+                        accentColor={this.state.accent}
                         createEducationEntry={() => {this.createEntry('education')}} 
                         educationInfo={this.state.education} 
                         onEditEducationClick={() => {this.allowEdits('education')}}
                     />
                     <Work
+                        accentColor={this.state.accent}
                         createWorkEntry={() => {this.createEntry('work')}}
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions onFontClick={this.changeFont} />
+                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
                     <Footer />
                 </div>   
             )

@@ -44,7 +44,7 @@ class Work extends React.Component {
             return (
                 <div className='work-section'>
                     <div className='work-section-title'>
-                        <span className='work-title-border'>Work</span>
+                        <span className='work-title-border' style={{backgroundColor: this.props.accentColor}}>Work</span>
                         <div className='edit-button edit-work no-print' onClick={this.handleSaveEditsClick}>Save All Edits</div>
                     </div>
 
@@ -88,7 +88,7 @@ class Work extends React.Component {
         return (
             <div className='work-section'>
                 <div className='work-section-title'>
-                    <span className='work-title-border'>Work</span>
+                    <span className='work-title-border' style={{backgroundColor: this.props.accentColor}}>Work</span>
                     <div className='edit-button edit-work no-print' onClick={this.handleEditClick} >Edit</div>
                 </div>
                 {workInfo.map((entry) => {

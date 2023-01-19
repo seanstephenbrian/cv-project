@@ -8,7 +8,12 @@ class PrintOptions extends React.Component {
     constructor(props) {
         super(props);
 
+        this.handleColorChange = this.handleColorChange.bind(this);
         this.handleFontClick = this.handleFontClick.bind(this);
+    }
+
+    handleColorChange(e) {
+        this.props.onColorChange(e.target.value);
     }
 
     handleFontClick(fontChoice) {
@@ -20,7 +25,7 @@ class PrintOptions extends React.Component {
             <div className='print-options no-print'>
                 <div className='accent-options'>
                     <label className='accent-text' htmlFor='accent-color'>Choose accent color:</label>
-                    <input className='color-picker' type='color' id='accent-color' name='accent-color' value='#e66465'/>
+                    <input className='color-picker' type='color' id='accent-color' name='accent-color' value={this.props.accentColor} onChange={this.handleColorChange} />
                 </div>
                 <div className='font-options'>
                     <span className='font-text'>Choose font:</span>
