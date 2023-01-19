@@ -8,12 +8,17 @@ class Education extends React.Component {
 
     constructor(props) {
         super(props);
-        this.editEducation = this.editEducation.bind(this);
+        this.handleEditClick = this.handleEditClick.bind(this);
         this.saveEdits = this.saveEdits.bind(this);
+        this.handleTextChange = this.handleTextChange.bind(this);
     }
 
-    editEducation() {
-        this.props.startEditingEducation();
+    handleEditClick() {
+        this.props.onEditEducationClick();
+    }
+
+    handleTextChange(section, e) {
+        this.props.onTextChange(section, e.target.dataset.id, e.target.name, e.target.value);
     }
 
     saveEdits() {
@@ -41,23 +46,23 @@ class Education extends React.Component {
                                 </div>
                                 <div className='item-edits school-edits'>
                                     <label className='edits-label' htmlFor='school'>School:</label>
-                                    <input className='edits-input' data-id={entry.id} type="text" name="school" value={entry.school} />
+                                    <input className='edits-input' data-id={entry.id} type="text" name="school" value={entry.school} onChange={(e) => {this.handleTextChange('education', e)}} />
                                 </div>
                                 <div className='item-edits dates-edits'>
                                     <label className='edits-label' htmlFor='dates'>Years of attendance:</label>
-                                    <input className='edits-input' data-id={entry.id} type='text' name='dates' value={entry.dates}></input>
+                                    <input className='edits-input' data-id={entry.id} type='text' name='dates' value={entry.dates} onChange={(e) => {this.handleTextChange('education', e)}}></input>
                                 </div>
                                 <div className='item-edits degree-edits'>
                                     <label className='edits-label' htmlFor='degree'>Degree/certification:</label>
-                                    <input className='edits-input' data-id={entry.id} type='text' name='degree' value={entry.degree}></input>
+                                    <input className='edits-input' data-id={entry.id} type='text' name='degree' value={entry.degree} onChange={(e) => {this.handleTextChange('education', e)}}></input>
                                 </div>
                                 <div className='item-edits subject-edits'>
                                     <label className='edits-label' htmlFor='subject'>Major/subject area:</label>
-                                    <input className='edits-input' data-id={entry.id} type='text' name='subject' value={entry.subject}></input>
+                                    <input className='edits-input' data-id={entry.id} type='text' name='subject' value={entry.subject} onChange={(e) => {this.handleTextChange('education', e)}}></input>
                                 </div>
                                 <div className='item-edits additional-edits'>
                                     <label className='edits-label' htmlFor='additional'>Additional information:</label>
-                                    <textarea className='edits-input' data-id={entry.id} name='additional' value={entry.additional}></textarea>
+                                    <textarea className='edits-input' data-id={entry.id} name='additional' value={entry.additional} onChange={(e) => {this.handleTextChange('education', e)}}></textarea>
                                 </div>
                                 
                             </div>
@@ -65,6 +70,7 @@ class Education extends React.Component {
                     })}
                     
                     <Add section="education" />
+
                 </div>
             )
         }
@@ -74,7 +80,7 @@ class Education extends React.Component {
             <div className='education-section'>
                 <div className='education-section-title'>
                     <span className='education-title-border'>Education</span>
-                    <div className='edit-button edit-education no-print' onClick={this.editEducation}>Edit</div>
+                    <div className='edit-button edit-education no-print' onClick={this.handleEditClick}>Edit</div>
                 </div>
                 {educationInfo.map((entry) => {
                     if (entry.subject) {

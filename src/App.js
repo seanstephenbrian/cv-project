@@ -19,6 +19,8 @@ class App extends React.Component {
   constructor() {
     super();
 
+    this.updateInformation = this.updateInformation.bind(this);
+
     this.state = {
       editing: '',
       general: {
@@ -75,6 +77,21 @@ class App extends React.Component {
     alert('THIS NEEDS TO CONFIRM EDITS');
   }
 
+  updateInformation(section, entryId, propertyToUpdate, value) {
+    let sectionToUpdate;
+    if (section === 'general') sectionToUpdate = this.state.general;
+    if (section === 'education') sectionToUpdate = this.state.education;
+    if (section === 'work') sectionToUpdate = this.state.work;
+
+    const updatedInformation = sectionToUpdate.map((entry) => {
+      if (entry.id === entryId) {
+        entry[propertyToUpdate] = value;
+      }
+    });
+
+    this.setState({ sectionToUpdate: updatedInformation });
+  }
+
   render() {
 
     if (this.state.editing === 'education') {
@@ -84,12 +101,13 @@ class App extends React.Component {
           <Education
             editing='true' 
             educationInfo={this.state.education} 
-            startEditingEducation={() => {
+            onEditEducationClick={() => {
               this.openEditWindow('education');
             }}
             saveEducationEdits={() => {
               this.confirmEdits();
             }}
+            onTextChange={this.updateInformation}
           />
           <Work 
             workInfo={this.state.work}
@@ -106,7 +124,7 @@ class App extends React.Component {
           <General generalInfo={this.state.general} />
           <Education 
             educationInfo={this.state.education} 
-            startEditingEducation={() => {
+            onEditEducationClick={() => {
               this.openEditWindow('education');
             }}
           />
@@ -126,7 +144,7 @@ class App extends React.Component {
           <General generalInfo={this.state.general} />
           <Education 
             educationInfo={this.state.education} 
-            startEditingEducation={() => {
+            onEditEducationClick={() => {
               this.openEditWindow('education');
             }}
           />
