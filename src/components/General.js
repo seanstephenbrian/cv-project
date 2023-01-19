@@ -8,6 +8,7 @@ class General extends React.Component {
         super(props);
 
         this.handleEditClick = this.handleEditClick.bind(this);
+        this.handleGeneralInfoChange = this.handleGeneralInfoChange.bind(this);
         this.handleSaveEditsClick = this.handleSaveEditsClick.bind(this);
         this.returnEditButton = this.returnEditButton.bind(this);
     }
@@ -18,6 +19,10 @@ class General extends React.Component {
 
     handleSaveEditsClick() {
         alert('handle save edits');
+    }
+
+    handleGeneralInfoChange(property, e) {
+        this.props.onGeneralInfoChange(property, e.target.value);
     }
 
     returnEditButton() {
@@ -31,19 +36,82 @@ class General extends React.Component {
 
     render() {
         const { name, email, phone, location, oneLiner, headshot } = this.props.generalInfo;
-        return (
-            <div className='general-info'>
-                <div className='name'><span className='name-border'>{name}</span></div>
-                {this.returnEditButton()}
-                <div className='email'>{email}</div>
-                <div className='phone'>{phone}</div>
-                <div className='one-liner'>{oneLiner}</div>
-                <div className='location'>{location}</div>
-                <div className='headshot-container'>
-                    {/* <img className="headshot-img" src={headshot} alt={name}></img> */}
+
+        // editing view:
+        if (this.props.editing === 'general') {
+            return (
+                <div className='editing-general-info general-info'>
+                    <div className='name'>
+                        <label className='edits-label' htmlFor='name'>Name:</label>
+                        <input 
+                            className='edits-input' 
+                            name="name"
+                            onChange={(e) => {this.handleGeneralInfoChange('name', e)}} 
+                            type="text"
+                            value={name}
+                        />
+                    </div>
+                    {this.returnEditButton()}
+                    <div className='email'>
+                        <label className='edits-label' htmlFor='email'>Email:</label>
+                        <input 
+                            className='edits-input' 
+                            name="email"
+                            onChange={(e) => {this.handleGeneralInfoChange('email', e)}} 
+                            type="text"
+                            value={email}
+                        />
+                    </div>
+                    <div className='phone'>
+                        <label className='edits-label' htmlFor='phone'>Phone:</label>
+                        <input 
+                            className='edits-input' 
+                            name="phone"
+                            onChange={(e) => {this.handleGeneralInfoChange('phone', e)}} 
+                            type="text"
+                            value={phone}
+                        />
+                    </div>
+                    <div className='one-liner'>
+                        <label className='edits-label' htmlFor='one-liner'>One-line summary:</label>
+                        <textarea 
+                            className='edits-input' 
+                            name="one-liner"
+                            onChange={(e) => {this.handleGeneralInfoChange('oneLiner', e)}} 
+                            value={oneLiner}
+                        />
+                    </div>
+                    <div className='location'>
+                        <label className='edits-label' htmlFor='location'>Location:</label>
+                        <input 
+                            className='edits-input' 
+                            name="location"
+                            onChange={(e) => {this.handleGeneralInfoChange('location', e)}} 
+                            type="text"
+                            value={location}
+                        />
+                    </div>
+                    <div className='headshot-container'>
+                        {/* <img className="headshot-img" src={headshot} alt={name}></img> */}
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        // default view:
+        } else {
+            return (
+                <div className='general-info'>
+                    <div className='name'><span className='name-border'>{name}</span></div>
+                    {this.returnEditButton()}
+                    <div className='email'>{email}</div>
+                    <div className='phone'>{phone}</div>
+                    <div className='one-liner'>{oneLiner}</div>
+                    <div className='location'>{location}</div>
+                    <div className='headshot-container'>
+                        {/* <img className="headshot-img" src={headshot} alt={name}></img> */}
+                    </div>
+                </div>
+            )
+        }   
     }
 }
 

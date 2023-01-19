@@ -19,6 +19,7 @@ class App extends React.Component {
   constructor() {
     super();
 
+    this.updateGeneralInfo = this.updateGeneralInfo.bind(this);
     this.updateInformation = this.updateInformation.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.saveEdits = this.saveEdits.bind(this);
@@ -29,7 +30,7 @@ class App extends React.Component {
         name: 'John Smith',
         email: 'johnsmith@gmail.com',
         phone: '1-234-567-8910',
-        oneLiner: 'Self-motivated team player with a wide-ranging yet specialized skill-set',
+        oneLiner: 'Born leader and team player with a wide-ranging yet specialized skill-set',
         location: 'Normal, IL',
         headshot: Headshot
       },
@@ -100,6 +101,12 @@ class App extends React.Component {
     }
   }
 
+  updateGeneralInfo(propertyKey, updatedValue) {
+    let generalInfo = this.state.general;
+    generalInfo[propertyKey] = updatedValue;
+    this.setState({general: generalInfo});
+  }
+
   updateInformation(section, entryId, propertyToUpdate, value) {
     let sectionToUpdate;
     if (section === 'general') sectionToUpdate = this.state.general;
@@ -119,7 +126,24 @@ class App extends React.Component {
   render() {
     // editing general info:
     if (this.state.editing === 'general') {
-      
+      return (
+        <div className="wrapper">
+          <General 
+            editing={this.state.editing}
+            generalInfo={this.state.general}
+            onGeneralInfoChange={(property, value) => {this.updateGeneralInfo(property, value)}} 
+          />
+          <Education 
+            educationInfo={this.state.education} 
+            onEditEducationClick={() => {this.allowEdits('education')}}
+          />
+          <Work
+            onEditWorkClick={() => {this.allowEdits('work')}}
+            workInfo={this.state.work}
+          />
+          <Footer />
+        </div>   
+      )
     // editing education:
     } else if (this.state.editing === 'education') {
       return (
