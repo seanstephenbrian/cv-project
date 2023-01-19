@@ -28,7 +28,7 @@ class General extends React.Component {
     returnEditButton() {
         const { editing } = this.props;
         if (editing === 'general') {
-            return <div className='edit-button edit-general no-print' onClick={this.handleSaveEditsClick} >Save Edits</div>
+            return <div className='edit-button edit-general save-general-edits no-print' onClick={this.handleSaveEditsClick} >Save Edits</div>
         } else {
             return <div className='edit-button edit-general no-print' onClick={this.handleEditClick} >Edit</div>
         }
@@ -40,8 +40,9 @@ class General extends React.Component {
         // editing view:
         if (this.props.editing === 'general') {
             return (
-                <div className='editing-general-info general-info'>
-                    <div className='name'>
+                <div className='editing-general-info'>
+                    <div className='edit-general-label'>Edit your personal information:</div>
+                    <div className='item-edits name-edits'>
                         <label className='edits-label' htmlFor='name'>Name:</label>
                         <input 
                             className='edits-input' 
@@ -52,7 +53,7 @@ class General extends React.Component {
                         />
                     </div>
                     {this.returnEditButton()}
-                    <div className='email'>
+                    <div className='item-edits email-edits'>
                         <label className='edits-label' htmlFor='email'>Email:</label>
                         <input 
                             className='edits-input' 
@@ -62,7 +63,7 @@ class General extends React.Component {
                             value={email}
                         />
                     </div>
-                    <div className='phone'>
+                    <div className='item-edits phone-edits'>
                         <label className='edits-label' htmlFor='phone'>Phone:</label>
                         <input 
                             className='edits-input' 
@@ -72,7 +73,7 @@ class General extends React.Component {
                             value={phone}
                         />
                     </div>
-                    <div className='one-liner'>
+                    <div className='item-edits one-liner-edits'>
                         <label className='edits-label' htmlFor='one-liner'>One-line summary:</label>
                         <textarea 
                             className='edits-input' 
@@ -81,7 +82,7 @@ class General extends React.Component {
                             value={oneLiner}
                         />
                     </div>
-                    <div className='location'>
+                    <div className='item-edits location-edits'>
                         <label className='edits-label' htmlFor='location'>Location:</label>
                         <input 
                             className='edits-input' 

@@ -79,3 +79,65 @@
 }
 
 /* editing styles: */
+.editing-general-info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        "edit-general-label ."
+        "name-edits save-edits"
+        "email-edits ."
+        "phone-edits ."
+        "one-liner-edits ."
+        "location-edits .";
+}
+
+.editing-general-info input,
+.editing-general-info textarea {
+    width: 75%;
+}
+
+.editing-general-info .item-edits {
+    height: 30px;
+}
+
+.editing-general-info .edits-label {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.editing-general-info .one-liner-edits {
+    height: 60px;
+}
+
+.edit-general-label {
+    font-size: 1.3rem;
+    grid-area: edit-general-label;
+    font-weight: 200;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.name-edits {
+    grid-area: name-edits;
+}
+
+.save-general-edits {
+    grid-area: save-edits;
+}
+
+.email-edits {
+    grid-area: email-edits;
+}
+
+.phone-edits {
+    grid-area: phone-edits;
+}
+
+.one-liner-edits {
+    grid-area: one-liner-edits;
+}
+
+.location-edits {
+    grid-area: location-edits;
+}
