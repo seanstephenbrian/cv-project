@@ -20,6 +20,7 @@ class App extends React.Component {
     super();
 
     this.updateInformation = this.updateInformation.bind(this);
+    this.saveEdits = this.saveEdits.bind(this);
 
     this.state = {
       editing: '',
@@ -104,9 +105,7 @@ class App extends React.Component {
             onEditEducationClick={() => {
               this.openEditWindow('education');
             }}
-            onSaveEditsClick={() => {
-              this.saveEdits();
-            }}
+            onSaveEditsClick={this.saveEdits}
             onTextChange={this.updateInformation}
           />
           <Work 
@@ -134,6 +133,7 @@ class App extends React.Component {
             startEditingWork={() => {
               this.openEditWindow('work');
             }}
+            onSaveEditsClick={this.saveEdits}
             onTextChange={this.updateInformation}
           />
           <Footer />

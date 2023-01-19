@@ -17,12 +17,12 @@ class Education extends React.Component {
         this.props.onEditEducationClick();
     }
 
-    handleTextChange(section, e) {
-        this.props.onTextChange(section, e.target.dataset.id, e.target.name, e.target.value);
-    }
-
     handleSaveEditsClick() {
         this.props.onSaveEditsClick();
+    }
+
+    handleTextChange(section, e) {
+        this.props.onTextChange(section, e.target.dataset.id, e.target.name, e.target.value);
     }
 
     render() {
