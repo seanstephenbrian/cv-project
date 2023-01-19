@@ -1,17 +1,22 @@
 {
   "files": {
-    "main.css": "/cv-project/static/css/main.74d12e8a.css",
-    "main.js": "/cv-project/static/js/main.0bc266f4.js",
+    "main.css": "/cv-project/static/css/main.6c24b478.css",
+    "main.js": "/cv-project/static/js/main.51cd4fee.js",
     "static/media/headshot.jpg": "/cv-project/static/media/headshot.21beb1dda1b5ca293c3b.jpg",
+    "static/media/eb-garamond.ttf": "/cv-project/static/media/eb-garamond.baa0e0cf79395becf7d7.ttf",
     "static/media/unbounded.ttf": "/cv-project/static/media/unbounded.db84d8db427d8dff17c3.ttf",
+    "static/media/open-sans.ttf": "/cv-project/static/media/open-sans.ceb05254cedfa895b512.ttf",
+    "static/media/torre-farfan.ttf": "/cv-project/static/media/torre-farfan.339fef04d67e108dd889.ttf",
+    "static/media/josefin-sans.ttf": "/cv-project/static/media/josefin-sans.1bfcfba29eda50476f98.ttf",
+    "static/media/courier-prime.ttf": "/cv-project/static/media/courier-prime.7503a2e9660bb6f608fb.ttf",
     "index.html": "/cv-project/index.html",
     "static/media/add.svg": "/cv-project/static/media/add.1407c79ba465617fe6fd07bfaedc035f.svg",
     "static/media/print.svg": "/cv-project/static/media/print.5e4b64f5cb9c839c30fcc3b104167891.svg",
-    "main.74d12e8a.css.map": "/cv-project/static/css/main.74d12e8a.css.map",
-    "main.0bc266f4.js.map": "/cv-project/static/js/main.0bc266f4.js.map"
+    "main.6c24b478.css.map": "/cv-project/static/css/main.6c24b478.css.map",
+    "main.51cd4fee.js.map": "/cv-project/static/js/main.51cd4fee.js.map"
   },
   "entrypoints": [
-    "static/css/main.74d12e8a.css",
-    "static/js/main.0bc266f4.js"
+    "static/css/main.6c24b478.css",
+    "static/js/main.51cd4fee.js"
   ]
 }
