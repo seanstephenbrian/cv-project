@@ -3,12 +3,13 @@
     height: 15vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-        "name headshot"
-        "location headshot"
-        "email headshot"
-        "phone headshot";
+        "name edit"
+        "location ."
+        "one-liner one-liner"
+        "email ."
+        "phone .";
     border-bottom: 0.5px solid black;
     padding-bottom: 10px;
 }
@@ -30,6 +31,10 @@
 .location {
     grid-area: location;
     font-weight: 200;
+}
+
+.one-liner {
+    grid-area: one-liner;
 }
 
 .email {

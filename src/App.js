@@ -29,6 +29,7 @@ class App extends React.Component {
         name: 'John Smith',
         email: 'johnsmith@gmail.com',
         phone: '1-234-567-8910',
+        oneLiner: 'Self-motivated team player with a wide-ranging yet specialized skill-set',
         location: 'Normal, IL',
         headshot: Headshot
       },
@@ -71,7 +72,7 @@ class App extends React.Component {
     }
   }
 
-  openEditWindow(section) {
+  allowEdits(section) {
     this.setState({editing: section});
   }
 
@@ -116,68 +117,71 @@ class App extends React.Component {
   }
 
   render() {
-
-    if (this.state.editing === 'education') {
+    // editing general info:
+    if (this.state.editing === 'general') {
+      
+    // editing education:
+    } else if (this.state.editing === 'education') {
       return (
         <div className="wrapper">
-          <General generalInfo={this.state.general} />
+          <General 
+            editing={this.state.editing}
+            generalInfo={this.state.general}
+            onEditGeneralClick={() => {this.allowEdits('general')}}
+          />
           <Education
             editing='true' 
             educationInfo={this.state.education}
             onDeleteClick={this.removeItem}
-            onEditEducationClick={() => {
-              this.openEditWindow('education');
-            }}
             onSaveEditsClick={this.saveEdits}
             onTextChange={this.updateInformation}
           />
-          <Work 
+          <Work
+            onEditWorkClick={() => {this.allowEdits('work')}}
             workInfo={this.state.work}
-            startEditingWork={() => {
-              this.openEditWindow('work');
-            }}
           />
           <Footer />
         </div>
       )
+    // editing work:
     } else if (this.state.editing === 'work') {
       return (
         <div className="wrapper">
-          <General generalInfo={this.state.general} />
+          <General 
+            editing={this.state.editing}
+            generalInfo={this.state.general} 
+            onEditGeneralClick={() => {this.allowEdits('general')}}
+          />
           <Education 
             educationInfo={this.state.education} 
-            onEditEducationClick={() => {
-              this.openEditWindow('education');
-            }}
+            onEditEducationClick={() => { this.allowEdits('education')}}
           />
           <Work
             editing='true'
-            workInfo={this.state.work}
-            startEditingWork={() => {
-              this.openEditWindow('work');
-            }}
             onDeleteClick={this.removeItem}
             onSaveEditsClick={this.saveEdits}
             onTextChange={this.updateInformation}
+            workInfo={this.state.work}
           />
           <Footer />
         </div>   
       )
+    // not editing:
     } else {
       return (
         <div className="wrapper">
-          <General generalInfo={this.state.general} />
+          <General 
+            editing={this.state.editing}
+            generalInfo={this.state.general}
+            onEditGeneralClick={() => {this.allowEdits('general')}} 
+          />
           <Education 
             educationInfo={this.state.education} 
-            onEditEducationClick={() => {
-              this.openEditWindow('education');
-            }}
+            onEditEducationClick={() => {this.allowEdits('education')}}
           />
-          <Work 
+          <Work
+            onEditWorkClick={() => {this.allowEdits('work')}}
             workInfo={this.state.work}
-            startEditingWork={() => {
-              this.openEditWindow('work');
-            }}
           />
           <Footer />
         </div>   
