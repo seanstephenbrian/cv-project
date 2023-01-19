@@ -10,12 +10,17 @@ class Work extends React.Component {
         super(props);
 
         this.editWork = this.editWork.bind(this);
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
         this.handleSaveEditsClick = this.handleSaveEditsClick.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
     }
 
     editWork() {
         this.props.startEditingWork();
+    }
+
+    handleDeleteClick(e) {
+        this.props.onDeleteClick(e);
     }
 
     handleSaveEditsClick() {
@@ -35,7 +40,7 @@ class Work extends React.Component {
                 <div className='work-section'>
                     <div className='work-section-title'>
                         <span className='work-title-border'>Work</span>
-                        <div className='edit-button edit-work no-print' onClick={this.handleSaveEditsClick}>Save Edits</div>
+                        <div className='edit-button edit-work no-print' onClick={this.handleSaveEditsClick}>Save All Edits</div>
                     </div>
 
                     {/* editable work entries: */}
@@ -43,7 +48,8 @@ class Work extends React.Component {
                         return (
                             <div key={entry.id} className="editing-entry">
                                 <div className='editing-entry-title'>
-                                    Edit item:
+                                    <span className='title-text'>Edit Item:</span>
+                                    <span className='delete-item' data-section='work' data-id={entry.id} onClick={this.handleDeleteClick}>Delete Item</span>
                                 </div>
                                 <div className='item-edits company-edits'>
                                     <label className='edits-label' htmlFor='company'>Company:</label>

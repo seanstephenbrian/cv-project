@@ -20,6 +20,7 @@ class App extends React.Component {
     super();
 
     this.updateInformation = this.updateInformation.bind(this);
+    this.removeItem = this.removeItem.bind(this);
     this.saveEdits = this.saveEdits.bind(this);
 
     this.state = {
@@ -78,6 +79,26 @@ class App extends React.Component {
     this.setState({ editing: '' });
   }
 
+  removeItem(e) {    
+    let targetSection;
+    if (e.target.dataset.section === 'education') targetSection = this.state.education;
+    if (e.target.dataset.section === 'work') targetSection = this.state.work;
+
+    const targetId = e.target.dataset.id;
+
+    let filteredEntries = targetSection.filter(entry => entry.id !== targetId);
+
+    if (e.target.dataset.section === 'education') {
+      this.setState({education: filteredEntries});
+    } else if (e.target.dataset.section === 'work') {
+      this.setState({work: filteredEntries});
+    }
+
+    if (filteredEntries.length === 0) {
+      this.saveEdits();
+    }
+  }
+
   updateInformation(section, entryId, propertyToUpdate, value) {
     let sectionToUpdate;
     if (section === 'general') sectionToUpdate = this.state.general;
@@ -88,6 +109,7 @@ class App extends React.Component {
       if (entry.id === entryId) {
         entry[propertyToUpdate] = value;
       }
+      return entry;
     });
 
     this.setState({ sectionToUpdate: updatedInformation });
@@ -101,7 +123,8 @@ class App extends React.Component {
           <General generalInfo={this.state.general} />
           <Education
             editing='true' 
-            educationInfo={this.state.education} 
+            educationInfo={this.state.education}
+            onDeleteClick={this.removeItem}
             onEditEducationClick={() => {
               this.openEditWindow('education');
             }}
@@ -133,6 +156,7 @@ class App extends React.Component {
             startEditingWork={() => {
               this.openEditWindow('work');
             }}
+            onDeleteClick={this.removeItem}
             onSaveEditsClick={this.saveEdits}
             onTextChange={this.updateInformation}
           />
