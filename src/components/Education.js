@@ -40,7 +40,7 @@ class Education extends React.Component {
                     {/* editable education entries: */}
                     {educationInfo.map((entry) => {
                         return (
-                            <div key={entry.id} className='editing-education-entry'>
+                            <div key={entry.id} className='editing-entry'>
                                 <div className='editing-entry-title'>
                                     Edit item:
                                 </div>

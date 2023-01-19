@@ -41,7 +41,7 @@ class Work extends React.Component {
                     {/* editable work entries: */}
                     {workInfo.map((entry) => {
                         return (
-                            <div key={entry.id} className="editing-work-entry">
+                            <div key={entry.id} className="editing-entry">
                                 <div className='editing-entry-title'>
                                     Edit item:
                                 </div>
