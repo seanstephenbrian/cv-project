@@ -20,10 +20,11 @@ class App extends React.Component {
     super();
 
     this.allowEdits = this.allowEdits.bind(this);
-    this.updateGeneralInfo = this.updateGeneralInfo.bind(this);
-    this.updateInformation = this.updateInformation.bind(this);
+    this.createEntry = this.createEntry.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.saveEdits = this.saveEdits.bind(this);
+    this.updateGeneralInfo = this.updateGeneralInfo.bind(this);
+    this.updateInformation = this.updateInformation.bind(this);
 
     this.state = {
       editing: '',
@@ -83,6 +84,34 @@ class App extends React.Component {
     this.setState({editing: section});
   }
 
+  createEntry(section) {
+    if (section === 'education') {
+      const blankEducationEntry = {
+        school: '',
+        dates: '',
+        degree: '',
+        subject: '',
+        additional: '',
+        id: uniqid()
+      }
+      const updatedEducation = [...this.state.education, blankEducationEntry];
+      this.setState({education: updatedEducation});
+      this.setState({editing: 'education'});
+    } else if (section === 'work') {
+      const blankWorkEntry = {
+        company: '',
+        location: '',
+        title: '',
+        years: '',
+        description: '',
+        id: uniqid()
+      }
+      const updatedWork = [...this.state.work, blankWorkEntry];
+      this.setState({work: updatedWork});
+      this.setState({editing: 'work'});
+    }
+  }
+
   saveEdits() {
     this.setState({ editing: '' });
   }
@@ -137,13 +166,16 @@ class App extends React.Component {
           <General 
             editing={this.state.editing}
             generalInfo={this.state.general}
-            onGeneralInfoChange={(property, value) => {this.updateGeneralInfo(property, value)}} 
+            onGeneralInfoChange={(property, value) => {this.updateGeneralInfo(property, value)}}
+            onSaveEditsClick={this.saveEdits}
           />
           <Education 
+            createEducationEntry={() => {this.createEntry('education')}}
             educationInfo={this.state.education} 
             onEditEducationClick={() => {this.allowEdits('education')}}
           />
           <Work
+            createWorkEntry={() => {this.createEntry('work')}}
             onEditWorkClick={() => {this.allowEdits('work')}}
             workInfo={this.state.work}
           />
@@ -160,6 +192,7 @@ class App extends React.Component {
             onEditGeneralClick={() => {this.allowEdits('general')}}
           />
           <Education
+            createEducationEntry={() => {this.createEntry('education')}}
             editing='true' 
             educationInfo={this.state.education}
             onDeleteClick={this.removeItem}
@@ -167,6 +200,7 @@ class App extends React.Component {
             onTextChange={this.updateInformation}
           />
           <Work
+            createWorkEntry={() => {this.createEntry('work')}}
             onEditWorkClick={() => {this.allowEdits('work')}}
             workInfo={this.state.work}
           />
@@ -182,11 +216,13 @@ class App extends React.Component {
             generalInfo={this.state.general} 
             onEditGeneralClick={() => {this.allowEdits('general')}}
           />
-          <Education 
+          <Education
+            createEducationEntry={() => {this.createEntry('education')}} 
             educationInfo={this.state.education} 
             onEditEducationClick={() => { this.allowEdits('education')}}
           />
           <Work
+            createWorkEntry={() => {this.createEntry('work')}}
             editing='true'
             onDeleteClick={this.removeItem}
             onSaveEditsClick={this.saveEdits}
@@ -205,11 +241,13 @@ class App extends React.Component {
             generalInfo={this.state.general}
             onEditGeneralClick={() => {this.allowEdits('general')}} 
           />
-          <Education 
+          <Education
+            createEducationEntry={() => {this.createEntry('education')}} 
             educationInfo={this.state.education} 
             onEditEducationClick={() => {this.allowEdits('education')}}
           />
           <Work
+            createWorkEntry={() => {this.createEntry('work')}}
             onEditWorkClick={() => {this.allowEdits('work')}}
             workInfo={this.state.work}
           />

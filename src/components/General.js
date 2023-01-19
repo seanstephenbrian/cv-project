@@ -18,7 +18,7 @@ class General extends React.Component {
     }
 
     handleSaveEditsClick() {
-        alert('handle save edits');
+        this.props.onSaveEditsClick();
     }
 
     handleGeneralInfoChange(property, e) {
@@ -52,7 +52,6 @@ class General extends React.Component {
                             value={name}
                         />
                     </div>
-                    {this.returnEditButton()}
                     <div className='item-edits email-edits'>
                         <label className='edits-label' htmlFor='email'>Email:</label>
                         <input 
@@ -92,9 +91,10 @@ class General extends React.Component {
                             value={location}
                         />
                     </div>
-                    <div className='headshot-container'>
-                        {/* <img className="headshot-img" src={headshot} alt={name}></img> */}
-                    </div>
+                    {this.returnEditButton()}
+                    {/* <div className='headshot-container'>
+                        <img className="headshot-img" src={headshot} alt={name}></img>
+                    </div> */}
                 </div>
             )
         // default view:

@@ -80,20 +80,20 @@
 
 /* editing styles: */
 .editing-general-info {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas:
-        "edit-general-label ."
-        "name-edits save-edits"
-        "email-edits ."
-        "phone-edits ."
-        "one-liner-edits ."
-        "location-edits .";
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 228, 179, 0.775);
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .editing-general-info input,
 .editing-general-info textarea {
-    width: 75%;
+    width: 85%;
 }
 
 .editing-general-info .item-edits {
@@ -116,28 +116,13 @@
     font-weight: 200;
     text-decoration: underline;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
-.name-edits {
-    grid-area: name-edits;
-}
 
 .save-general-edits {
-    grid-area: save-edits;
-}
-
-.email-edits {
-    grid-area: email-edits;
-}
-
-.phone-edits {
-    grid-area: phone-edits;
-}
-
-.one-liner-edits {
-    grid-area: one-liner-edits;
-}
-
-.location-edits {
-    grid-area: location-edits;
+    align-self: center;
+    margin-bottom: 0;
 }

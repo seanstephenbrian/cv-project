@@ -9,10 +9,15 @@ class Education extends React.Component {
     constructor(props) {
         super(props);
 
+        this.addEducationEntry = this.addEducationEntry.bind(this);
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
         this.handleEditClick = this.handleEditClick.bind(this);
         this.handleSaveEditsClick = this.handleSaveEditsClick.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
+    }
+
+    addEducationEntry() {
+        this.props.createEducationEntry();
     }
 
     handleDeleteClick(e) {
@@ -76,7 +81,7 @@ class Education extends React.Component {
                         )
                     })}
                     
-                    <Add section="education" />
+                    <Add onAddClick={this.addEducationEntry} section="education" />
 
                 </div>
             )
@@ -119,7 +124,7 @@ class Education extends React.Component {
                         </div>
                     )
                 })}
-                <Add section="education" />
+                <Add onAddClick={this.addEducationEntry} section="education" />
             </div>
         )
     }

@@ -9,10 +9,15 @@ class Work extends React.Component {
     constructor(props) {
         super(props);
 
+        this.addWorkEntry = this.addWorkEntry.bind(this);
         this.handleEditClick = this.handleEditClick.bind(this);
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
         this.handleSaveEditsClick = this.handleSaveEditsClick.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
+    }
+
+    addWorkEntry() {
+        this.props.createWorkEntry();
     }
 
     handleEditClick() {
@@ -74,7 +79,7 @@ class Work extends React.Component {
                             </div>
                         )
                     })}
-                    <Add section="work" />
+                    <Add onAddClick={this.addWorkEntry} section="work" />
                 </div>
             )
         }
@@ -102,7 +107,7 @@ class Work extends React.Component {
                         </div>
                     )
                 })}
-                <Add section="work" />
+                <Add onAddClick={this.addWorkEntry} section="work" />
             </div>
         )
     }
