@@ -3,15 +3,27 @@
     height: 15vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr repeat(3, 0.5fr);
     grid-template-areas: 
         "name edit"
-        "location ."
         "one-liner one-liner"
+        "location ."
         "email ."
         "phone .";
     border-bottom: 0.5px solid black;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.edit-general {
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    grid-area: edit;
+    justify-self: end;
+    align-self: end;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .name {
@@ -28,25 +40,28 @@
     border-radius: 10px;
 }
 
-.location {
-    grid-area: location;
+.one-liner {
+    grid-area: one-liner;
+    display: flex;
+    align-items: center;
+}
+
+.location,
+.email,
+.phone {
     font-weight: 200;
 }
 
-.one-liner {
-    grid-area: one-liner;
+.location {
+    grid-area: location;
 }
 
 .email {
     grid-area: email;
-    display: flex;
-    align-items: flex-end;
-    font-weight: 300;
 }
 
 .phone {
     grid-area: phone;
-    font-weight: 300;
 }
 
 .headshot-container {
