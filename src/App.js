@@ -19,6 +19,7 @@ class App extends React.Component {
   constructor() {
     super();
 
+    this.allowEdits = this.allowEdits.bind(this);
     this.updateGeneralInfo = this.updateGeneralInfo.bind(this);
     this.updateInformation = this.updateInformation.bind(this);
     this.removeItem = this.removeItem.bind(this);
@@ -74,6 +75,11 @@ class App extends React.Component {
   }
 
   allowEdits(section) {
+    if (section === 'education' && this.state.education.length === 0) {
+      return;
+    } else if (section === 'work' && this.state.work.length === 0) {
+      return;
+    }
     this.setState({editing: section});
   }
 
