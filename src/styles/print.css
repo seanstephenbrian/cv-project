@@ -55,7 +55,7 @@
 }
 
 .font-choice:hover {
-    transform: scale(1.05);
+    transform: scale(1.10);
 }
 
 .courier-prime {
@@ -80,6 +80,16 @@
 
 .unbounded {
     font-family: 'Unbounded';
+}
+
+.font-list.opensans .open-sans,
+.font-list.josefinsans .josefin-sans,
+.font-list.unbounded .unbounded,
+.font-list.courierprime .courier-prime,
+.font-list.ebgaramond .eb-garamond,
+.font-list.torrefarfan .torre-farfan {
+    background-color: rgb(255, 174, 25);
+    transform: scale(1.10);
 }
 
 .divider {

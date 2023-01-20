@@ -77,7 +77,8 @@ class App extends React.Component {
                 }
             ],
             accent: '#FFBEAD',
-            font: 'Unbounded'
+            font: 'Open Sans',
+            fontClass: 'opensans'
         }
     }
 
@@ -96,6 +97,8 @@ class App extends React.Component {
 
     changeFont(fontChoice) {
         this.setState({font: fontChoice});
+        const className = fontChoice.replace(/\s+/g, '').toLowerCase();
+        this.setState({fontClass: className});
     }
 
     createEntry(section) {
@@ -195,7 +198,12 @@ class App extends React.Component {
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
+                    <PrintOptions 
+                        accentColor={this.state.accent} 
+                        onColorChange={this.changeAccentColor} 
+                        onFontClick={this.changeFont} 
+                        selectedFont={this.state.fontClass} 
+                    />
                     <Footer />
                 </div>   
             )
@@ -225,7 +233,12 @@ class App extends React.Component {
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
+                    <PrintOptions 
+                        accentColor={this.state.accent} 
+                        onColorChange={this.changeAccentColor} 
+                        onFontClick={this.changeFont} 
+                        selectedFont={this.state.fontClass} 
+                    />
                     <Footer />
                 </div>
             )
@@ -255,7 +268,12 @@ class App extends React.Component {
                         onTextChange={this.updateInformation}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
+                    <PrintOptions 
+                        accentColor={this.state.accent} 
+                        onColorChange={this.changeAccentColor} 
+                        onFontClick={this.changeFont} 
+                        selectedFont={this.state.fontClass} 
+                    />
                     <Footer />
                 </div>   
             )
@@ -282,7 +300,12 @@ class App extends React.Component {
                         onEditWorkClick={() => {this.allowEdits('work')}}
                         workInfo={this.state.work}
                     />
-                    <PrintOptions accentColor={this.state.accent} onColorChange={this.changeAccentColor} onFontClick={this.changeFont} />
+                    <PrintOptions 
+                        accentColor={this.state.accent} 
+                        onColorChange={this.changeAccentColor} 
+                        onFontClick={this.changeFont} 
+                        selectedFont={this.state.fontClass} 
+                    />
                     <Footer />
                 </div>   
             )

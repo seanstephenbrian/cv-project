@@ -29,16 +29,16 @@ class PrintOptions extends React.Component {
                 </div>
                 <div className='font-options'>
                     <span className='font-text'>Choose font:</span>
-                    <div className='font-list'>
-                        <span className='font-choice unbounded' onClick={() => this.handleFontClick('Unbounded')}>Unbounded</span>
-                        <span className='divider'>●</span>
-                        <span className='font-choice eb-garamond' onClick={() => this.handleFontClick('EB Garamond')}>EB Garamond</span>
-                        <span className='divider'>●</span>
+                    <div className={'font-list ' + this.props.selectedFont}>
                         <span className='font-choice open-sans' onClick={() => this.handleFontClick('Open Sans')}>Open Sans</span>
+                        <span className='divider'>●</span>
+                        <span className='font-choice josefin-sans' onClick={() => this.handleFontClick('Josefin Sans')}>Josefin Sans</span>
+                        <span className='divider'>●</span>
+                        <span className='font-choice unbounded' onClick={() => this.handleFontClick('Unbounded')}>Unbounded</span>
                         <span className='divider'>●</span>
                         <span className='font-choice courier-prime' onClick={() => this.handleFontClick('Courier Prime')}>Courier Prime</span>
                         <span className='divider'>●</span>
-                        <span className='font-choice josefin-sans' onClick={() => this.handleFontClick('Josefin Sans')}>Josefin Sans</span>
+                        <span className='font-choice eb-garamond' onClick={() => this.handleFontClick('EB Garamond')}>EB Garamond</span>
                         <span className='divider'>●</span>
                         <span className='font-choice torre-farfan' onClick={() => this.handleFontClick('Torre Farfan')}>Torre Farfan</span>
                     </div>
