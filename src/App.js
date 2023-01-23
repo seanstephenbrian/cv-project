@@ -171,7 +171,7 @@ const App = () => {
                 }
                 return entry;
             });
-            setWork([updatedWork]);
+            setWork(updatedWork);
         }
     }
 
