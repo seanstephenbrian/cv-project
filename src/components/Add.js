@@ -1,29 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import AddIcon from '../img/add.svg';
 
 import '../styles/add.css';
 
-class Add extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.handleAddClick = this.handleAddClick.bind(this);
+const Add = (props) => {
+    function handleAddClick() {
+        props.onAddClick();
     }
 
-    handleAddClick() {
-        this.props.onAddClick();
-    }
+    const addClasses = `no-print icon-wrapper add-${props.section}`;
 
-    render() {
-        const { section } = this.props;
-        const addClasses = `no-print icon-wrapper add-${section}`;
-        return (
-            <div className={addClasses}>
-                <img onClick={this.handleAddClick} className='add-img' src={AddIcon} alt='Add'></img>
-            </div>
-        )
-    }
-}
+    return (
+        <div className={addClasses}>
+            <img onClick={handleAddClick} className='add-img' src={AddIcon} alt='Add'></img>
+        </div>
+    )
+};
 
 export default Add;

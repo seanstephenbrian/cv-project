@@ -1,5 +1,5 @@
 // dependencies: 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import uniqid from 'uniqid';
 
 // components:
