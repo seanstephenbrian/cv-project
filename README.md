@@ -9,7 +9,7 @@ to edit a particular section, a new editing view with populated input fields is 
 entries within the section are dynamically updated whenever the user changes the value of any of the 
 inputs.
 
-new entries can be added, entries can be deleted, and the user has the ability to choose a custom font 
-and set a custom accent color for the section headings.
+new work/education entries can be added, entries can be deleted, and the user has the ability to choose 
+a custom font and set a custom accent color for the section headings.
 
 a print button launches the print dialog with a printer-ready version of the custom resume.
